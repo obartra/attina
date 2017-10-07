@@ -32,6 +32,12 @@ export default class Attina extends React.Component {
     const template = `
     <html>
       <body>
+        <style>
+          body {
+            margin: 0;
+            padding: 0;
+          }
+        </style>
         ${this.state.diagram}
       </body>
     </html>
