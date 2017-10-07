@@ -1,0 +1,16 @@
+{
+  "name": "attina",
+  "version": "1.0.0",
+  "description": "mermaid's react viewer",
+  "main": "attina.js",
+  "repository": "https://github.com/obartra/attina.git",
+  "author": "Oscar Bartra <obartra@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=15.0.0",
+    "react-dom": ">=15.0.0"
+  },
+  "dependencies": {
+    "mermaid": "^7.1.0"
+  }
+}
