@@ -12,6 +12,25 @@ Install with:
 $ yarn add attina
 ```
 
+## Usage
+
+```js
+<Attina
+  diagram={`
+    graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;`}
+/>
+```
+
+Will produce the following output:
+
+![](img/output.png)
+
 ## Demo
 
-Check out [this](https://codesandbox.io/s/7jqo862n7j) code sample for how to use it
+You can modify this example on codesandbox:
+
+[![Edit 7jqo862n7j](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/7jqo862n7j)

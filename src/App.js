@@ -5,9 +5,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Attina name="diagram" style={{ width: 500, height: 500 }}>
-          graph TD; A-->B; A-->C; B-->D; C-->D;
-        </Attina>
+        <Attina
+          name="diagram"
+          style={{ width: 500, height: 500 }}
+          diagram="graph TD; A-->B; A-->C; B-->D; C-->D;"
+        />
       </div>
     );
   }
