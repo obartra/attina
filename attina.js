@@ -1,34 +1,33 @@
 import React from "react";
 import { mermaidAPI } from "mermaid";
 
-function getDiagram(title, children, callback) {
-  mermaidAPI.render(title, children.toString(), diagram => {
+function getDiagram(title, input, callback) {
+  mermaidAPI.render(title, input, diagram => {
     callback({ diagram });
   });
 }
 
-export default class Attina extends React.Component {
-  state = {
-    diagram: "Loading..."
-  };
+class Attina extends React.Component {
+  constructor(props) {
+    super(props);
 
-  static defaultProps = {
-    title: "diagram",
-    frameBorder: 0
-  };
+    this.state = {
+      diagram: "Loading..."
+    };
+  }
 
   componentWillMount() {
-    getDiagram(this.props.title, this.props.children, state =>
+    getDiagram(this.props.title, this.props.diagram, state =>
       this.setState(state)
     );
   }
 
-  componentWillReceiveProps({ children }) {
-    getDiagram(this.props.title, children, state => this.setState(state));
+  componentWillReceiveProps({ diagram }) {
+    getDiagram(this.props.title, diagram, state => this.setState(state));
   }
 
   render() {
-    const { childrnen, ...props } = this.props;
+    const { style = "", ...props } = this.props;
     const template = `
     <html>
       <body>
@@ -37,6 +36,7 @@ export default class Attina extends React.Component {
             margin: 0;
             padding: 0;
           }
+          ${style}
         </style>
         ${this.state.diagram}
       </body>
@@ -47,3 +47,10 @@ export default class Attina extends React.Component {
     );
   }
 }
+
+Attina.defaultProps = {
+  title: "diagram",
+  frameBorder: 0
+};
+
+export default Attina;
