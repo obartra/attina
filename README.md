@@ -1,3 +1,5 @@
+
+# PROJECT UNMAINTAINED
 # Attina 🐟
 
 Mermaid react renderer compatible with React 15.5+ based off [React Mermaid](https://github.com/jasonbellamy/react-mermaid)
